@@ -14,6 +14,12 @@ class App extends StatelessWidget {
       title: 'My First App',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
+        pageTransitionsTheme: const PageTransitionsTheme(
+          builders: {
+            TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+            TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+          },
+        ),
       ),
       home: const HomeScreen(),
     );
