@@ -11,11 +11,35 @@ class CustomDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          const DrawerHeader(
+          DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.yellow,
+              color: Colors.lime[700],
             ),
-            child: Text('Drawer Header'),
+            child: Center(
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.perm_contact_cal_sharp,
+                    size: 30,
+                    color: Colors.lime[900],
+                  ),
+                  const SizedBox(
+                    width: 3,
+                  ),
+                  const Text(
+                    'Mail',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(
+                    width: 3,
+                  ),
+                  const Text(
+                    'Hyuil',
+                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            ),
           ),
           ListTile(
             title: const Text('Home'),

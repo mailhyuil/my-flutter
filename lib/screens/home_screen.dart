@@ -1,41 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:hahaha/screens/detail_screen.dart';
 import 'package:hahaha/widgets/app_bar.dart';
 import 'package:hahaha/widgets/bottom_navigation_bar.dart';
 import 'package:hahaha/widgets/drawer.dart';
 
-final products = [
-  'Product 1',
-  'Product 2',
-  'Product 3',
-  'Product 4',
-  'Product 1',
-  'Product 2',
-  'Product 3',
-  'Product 4',
-  'Product 1',
-  'Product 2',
-  'Product 3',
-  'Product 4',
-  'Product 1',
-  'Product 2',
-  'Product 3',
-  'Product 4',
-  'Product 1',
-  'Product 2',
-  'Product 3',
-  'Product 4',
-  'Product 1',
-  'Product 2',
-  'Product 3',
-  'Product 4',
-  'Product 1',
-  'Product 2',
-  'Product 3',
-  'Product 4',
-  'Product 1',
-  'Product 2',
-  'Product 3',
-  'Product 4',
+final list = [
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
+  'Image',
 ];
 
 class HomeScreen extends StatelessWidget {
@@ -64,16 +65,66 @@ class HomeScreen extends StatelessWidget {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
+          children: [
             Expanded(
               child: SizedBox(
                 height: 400.0,
                 child: ListView.builder(
                   scrollDirection: Axis.vertical,
-                  itemCount: products.length,
+                  itemCount: list.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                        color: Colors.amber, child: Text(products[index]));
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            fullscreenDialog: true,
+                            builder: (context) =>
+                                DetailScreen(key: UniqueKey()),
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: Container(
+                          color: Colors.blueGrey[100],
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  children: [
+                                    Text('${index + 1}',
+                                        style: const TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.bold)),
+                                    const Text(' - ',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                        )),
+                                    Text(list[index],
+                                        style: const TextStyle(
+                                            fontSize: 28,
+                                            fontWeight: FontWeight.bold)),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  child: Image(
+                                    image: NetworkImage(
+                                        'https://picsum.photos/250?image=$index'),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
                   },
                 ),
               ),
