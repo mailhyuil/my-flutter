@@ -63,12 +63,11 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: SizedBox(
-                height: 400.0,
+        Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
                 child: ListView.builder(
                   scrollDirection: Axis.vertical,
                   itemCount: list.length,
@@ -84,52 +83,53 @@ class HomeScreen extends StatelessWidget {
                           ),
                         );
                       },
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8.0),
-                        child: Container(
-                          color: Colors.blueGrey[100],
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  children: [
-                                    Text('${index + 1}',
-                                        style: const TextStyle(
-                                            fontSize: 24,
-                                            fontWeight: FontWeight.bold)),
-                                    const Text(' - ',
-                                        style: TextStyle(
-                                          fontSize: 20,
-                                        )),
-                                    Text(list[index],
-                                        style: const TextStyle(
-                                            fontSize: 28,
-                                            fontWeight: FontWeight.bold)),
-                                  ],
+                      child: Container(
+                        decoration: const BoxDecoration(
+                            color: Colors.black12,
+                            border: Border.symmetric(
+                                horizontal: BorderSide(
+                                    width: 2, color: Colors.black26))),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Text('${index + 1}',
+                                      style: const TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold)),
+                                  const Text(' - ',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                      )),
+                                  Text(list[index],
+                                      style: const TextStyle(
+                                          fontSize: 28,
+                                          fontWeight: FontWeight.bold)),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10.0),
+                                child: Image(
+                                  image: NetworkImage(
+                                      'https://picsum.photos/250?image=$index'),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  child: Image(
-                                    image: NetworkImage(
-                                        'https://picsum.photos/250?image=$index'),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     );
                   },
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ]),
     );
