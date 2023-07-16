@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hahaha/screens/contact_screen.dart';
 import 'package:hahaha/screens/home_screen.dart';
+import 'package:hahaha/screens/test_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -47,7 +48,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => HomeScreen(key: UniqueKey()),
+                  builder: (context) => const HomeScreen(),
                 ),
               );
             },
@@ -58,7 +59,18 @@ class CustomDrawer extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ContactScreen(key: UniqueKey()),
+                  builder: (context) => const ContactScreen(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('Test'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const TestScreen(),
                 ),
               );
             },
