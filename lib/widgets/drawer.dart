@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hahaha/screens/animation_screen.dart';
 import 'package:hahaha/screens/contact_screen.dart';
 import 'package:hahaha/screens/home_screen.dart';
 import 'package:hahaha/screens/test_screen.dart';
@@ -12,9 +13,9 @@ class CustomDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          DrawerHeader(
+          const DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.lime[700],
+              color: Colors.black,
             ),
             child: Center(
               child: Row(
@@ -22,21 +23,27 @@ class CustomDrawer extends StatelessWidget {
                   Icon(
                     Icons.perm_contact_cal_sharp,
                     size: 30,
-                    color: Colors.lime[900],
+                    color: Colors.white,
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 3,
                   ),
-                  const Text(
+                  Text(
                     'Mail',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 3,
                   ),
-                  const Text(
+                  Text(
                     'Hyuil',
-                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -60,6 +67,17 @@ class CustomDrawer extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const ContactScreen(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('Animation'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AnimationScreen(),
                 ),
               );
             },
