@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hahaha/screens/animation_screen.dart';
-import 'package:hahaha/screens/contact_screen.dart';
-import 'package:hahaha/screens/home_screen.dart';
-import 'package:hahaha/screens/test_screen.dart';
+import 'package:hahaha/screens/animation.dart';
+import 'package:hahaha/screens/contact.dart';
+import 'package:hahaha/screens/home.dart';
+import 'package:hahaha/screens/http.dart';
+import 'package:hahaha/screens/test.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -61,12 +62,12 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Contact'),
+            title: const Text('Provider Test'),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const ContactScreen(),
+                  builder: (context) => ContactScreen(),
                 ),
               );
             },
@@ -89,6 +90,17 @@ class CustomDrawer extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const TestScreen(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('HTTP'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HttpScreen(),
                 ),
               );
             },

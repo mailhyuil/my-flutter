@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hahaha/screens/detail_screen.dart';
+import 'package:hahaha/screens/detail.dart';
 import 'package:hahaha/widgets/app_bar.dart';
 import 'package:hahaha/widgets/bottom_navigation_bar.dart';
 import 'package:hahaha/widgets/drawer.dart';
